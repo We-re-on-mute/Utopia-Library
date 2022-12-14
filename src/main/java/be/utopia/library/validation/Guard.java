@@ -6,7 +6,7 @@ public class Guard {
 
     private static final String REGEX_NICKNAME = "^([a-zA-Z0-9_.-]){2,30}$";
     private static final String REGEX_ONLYLETTERS = "^[a-zA-Z]+$";
-    private static final String REGEX_URL = "^(https)://[a-zA-Z0-9-_.]+\\.[a-zA-Z]{2,5}(/.*)?$";
+    private static final String REGEX_URL = "^(https):\\/\\/[a-zA-Z0-9-_.]+\\.[a-zA-Z]{2,5}(\\/.*)?$";
     private static final String REGEX_TITLE = "^.{2,80}$";
     private static final String REGEX_TEXTBLOCK = "^.{2,500}$";
 
