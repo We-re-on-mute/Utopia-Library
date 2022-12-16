@@ -14,6 +14,10 @@ import org.springframework.kafka.support.serializer.JsonDeserializer;
 
 @Configuration
 public class CustomConsumerFactory {
+    /**
+     * Method for creating a factory for creating a Kafka listener container
+     * @return DefaultKafkaConsumerFactory
+     */
     @Bean
     public ConsumerFactory<String, ApplicationEvent> consumerFactory(){
         Map<String, Object> props = new HashMap<String, Object>();
@@ -26,6 +30,10 @@ public class CustomConsumerFactory {
         return factory;
     }
 
+    /**
+     * Method for creating a factory for creating a concurrent Kafka listener container
+     * @return ConcurrentKafkaListenerContainerFactory
+     */
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, ApplicationEvent> kafkaListenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, ApplicationEvent> factory = new ConcurrentKafkaListenerContainerFactory<String, ApplicationEvent>();

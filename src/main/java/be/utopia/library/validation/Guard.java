@@ -13,6 +13,9 @@ public class Guard {
 
     /**
      * Checks if the provided parameter is equal to null
+     * @param t
+     * @param caseOfException
+     * @return the provided parameter if it is not null
      */
     public static<T> T notNull (T t, String caseOfException){
         if (t == null){
@@ -23,6 +26,9 @@ public class Guard {
 
     /**
      * Checks if the provided string is either null or empty
+     * @param s
+     * @param caseOfException
+     * @return the provided string if it is not null or empty
      */
     public static String notBlank (String s, String caseOfException){
         if (Guard.notNull(s, caseOfException).isBlank())
@@ -32,6 +38,11 @@ public class Guard {
 
     /**
      * Checks if the lenght of the provided string is between a given min (not inclusive) and max bound (not inclusive)
+     * @param s
+     * @param min
+     * @param max
+     * @param caseOfException
+     * @return the provided string if it is between the given bounds
      */
     public static String limitSize(String s, int min, int max, String caseOfException){
         String sNotNull = Guard.notNull(s, caseOfException);
@@ -42,6 +53,9 @@ public class Guard {
 
     /**
      * Checks if the provided string contains only alphabetic characters
+     * @param s
+     * @param caseOfException
+     * @return the provided string if it contains only alphabetic characters
      */
     public static String onlyLetters(String s, String caseOfException){
         if(!Pattern.matches(REGEX_ONLYLETTERS, Guard.notNull(s, caseOfException)))
@@ -51,6 +65,10 @@ public class Guard {
 
     /**
      * Checks if the provided string is a valid nickname
+     * @param s
+     * @param caseOfException
+     * @return the provided string if it is a valid nickname
+     * @throws IllegalArgumentException
      */
     public static String validNickname(String s, String caseOfException){
         if(!Pattern.matches(REGEX_NICKNAME, Guard.notNull(s, caseOfException)))
@@ -61,6 +79,10 @@ public class Guard {
 
     /**
      * Checks if the provided string is a valid URL
+     * @param s
+     * @param caseOfException
+     * @return the provided string if it is a valid URL
+     * @throws IllegalArgumentException
      */
     public static String validURL(String s, String caseOfException){
         if(!Pattern.matches(REGEX_URL, Guard.notNull(s, caseOfException)))
@@ -70,6 +92,10 @@ public class Guard {
 
     /**
      * Checks if the provided string is a valid title
+     * @param s
+     * @param caseOfException
+     * @return the provided string if it is a valid title
+     * @throws IllegalArgumentException
      */
 
     public static String validTitle(String s, String caseOfException){
@@ -80,6 +106,10 @@ public class Guard {
 
     /**
      * Checks if the provided string is a valid textblock
+     * @param s
+     * @param caseOfException
+     * @return the provided string if it is a valid textblock
+     * @throws IllegalArgumentException
      */
 
     public static String validTextBlock(String s, String caseOfException){
@@ -94,6 +124,10 @@ public class Guard {
      * The regex to use for testing
      * @param s
      * The string to test against the custom regex
+     * @param caseOfException
+     * The case of exception to throw if the string is not valid
+     * @return the provided string if it is valid according to the custom regex
+     * @throws IllegalArgumentException
      */
 
     public static String validCustom(String pattern, String s, String caseOfException){
@@ -104,14 +138,16 @@ public class Guard {
 
     /**
      * Checks if the provided integer lies between a given min (not inclusive) and max (not inclusive)
+     * @param i
+     * @param min
+     * @param max
+     * @param caseOfException
+     * @return the provided integer if it lies between the given bounds
+     * @throws IllegalArgumentException
      */
     public static int between (int i, int min, int max, String caseOfException){
         if ((i < min || i > max))
             throw new IllegalArgumentException(caseOfException + " Exception during between Guard: " + i + " is not between min " + min + " and max " + max);
         return i;
     }
-
-
-
-    
 }

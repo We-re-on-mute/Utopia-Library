@@ -14,6 +14,9 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
  */
 public class EventProducer {
 
+	/**
+	 * Constructor for EventProducer
+	 */
 	public EventProducer() {
 		Map<String, Object> props = new HashMap<String, Object>();
 		
@@ -35,7 +38,7 @@ public class EventProducer {
 	/**
 	 * Used to send the ApplicationEvent provided on the Topic of the Kafka broker
 	 * @param topic
-	 * The topic is the three-digit code of the microservice, usually defined as a constant in the EventService.
+	 * The topic is name of the microservice, usually defined as a constant in the EventService.
 	 * @param event
 	 * ApplicationEvent created through its static factory method
 	 */
