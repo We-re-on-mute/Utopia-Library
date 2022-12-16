@@ -74,5 +74,12 @@
       </extension>
     </extensions>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/We-re-on-mute/Utopia-Library</url>
+    </repository>
+  </distributionManagement>
 
 </project>
