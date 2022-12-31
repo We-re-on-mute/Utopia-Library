@@ -14,7 +14,6 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 /**
  * EventProducer is used to send ApplicationEvents to other services
  */
-@Configuration
 public class EventProducer {
 
 	/**
