@@ -22,7 +22,7 @@ public class EventProducer {
 	public EventProducer() {
 		Map<String, Object> props = new HashMap<String, Object>();
 		
-		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.10.115:9092");
+		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka.broker:9092");
 		props.put(ProducerConfig.RETRIES_CONFIG, 0);
 		props.put(ProducerConfig.BATCH_SIZE_CONFIG, 16384);
 		props.put(ProducerConfig.LINGER_MS_CONFIG, 1);
