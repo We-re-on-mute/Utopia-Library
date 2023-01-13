@@ -45,7 +45,7 @@ public class EventProducer {
 	 * ApplicationEvent created through its static factory method
 	 */
 	public void Send(String topic, ApplicationEvent event) {
-		String key = event.data.getClass().toString();
-		kafkaTemplate.send(topic, "key", event);
+		// String key = event.data.getClass().toString();
+		kafkaTemplate.send(topic, event);
 	}
 }
