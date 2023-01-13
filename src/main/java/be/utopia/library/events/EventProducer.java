@@ -46,6 +46,6 @@ public class EventProducer {
 	 */
 	public void Send(String topic, ApplicationEvent event) {
 		String key = event.data.getClass().toString();
-		kafkaTemplate.send(topic, key, event);
+		kafkaTemplate.send(topic, "key", event);
 	}
 }
